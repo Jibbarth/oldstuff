@@ -1,0 +1,281 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+<style type="text/css">
+textarea {
+	width:98%;
+	height:400px;
+}
+
+canvas{
+	width:800px;
+	height:400px;
+	
+	margin:0 auto;
+	display:block;
+	color:white
+}
+
+</style>
+</head>
+<body>
+    <div class="top clearfix">
+         <a href="http://jibébarth.fr">
+             <strong>Jibé Barth // Experiments </strong>
+        </a>
+		<div style="float:right">Fork me on <a href="http://github.com/Jibbarth/kml2gml">Github</a></div>
+     </div>
+<center>
+	<h1 style="color: #ddd">KML2GML.JS</h1>
+</center>
+<div class="test ">
+	<div class="row-fluid" style="">	
+		<div class="span6 well" >
+			<h2>KML</h2>
+			<textarea id="kml" ></textarea>
+		</div>
+		<div class="span6 well" >
+			<h2>GML</h2>
+			<textarea id="gmltxt" ></textarea>
+			
+			<form action="http://000000book.com/data?redirect=1" method="post">
+            <fieldset id="share" style="display:none">
+                <legend>Share on <a href="http://000000book.com/">000000book.com</a></legend>
+
+                <input type="hidden" name="gml" id="gml" value="">
+                <input type="hidden" name="application" value="kml2gml.js">
+
+                <label for="share-author">Your name</label>
+                <input name="author" id="share-author"><br>
+
+
+                <label for="share-location">Your location</label>
+                <input name="location" id="share-location"><br>
+
+                <label for="share-keywords">Some keywords</label>
+                <input name="keywords" id="share-keywords"><br>
+
+                <label for="share-username">Your 000000book.com login</label>
+                <input name="username" id="share-username"><br>
+
+                <input type="submit" value="Share">
+
+            </fieldset>
+        </form>
+		</div>
+	</div>
+	<center><button class="btn btn-primary btn-large" id="convert">Convert</button></center>
+<button class="btn btn-warning" onclick="reset()">Reset</button>
+	<div id="affichage" class="row-fluid well" style="display:none;">
+		<canvas id="canvas"></canvas>
+	</div>
+</div><script src="jquery.js"></script>
+
+
+<script>
+function map(value, low1, high1, low2, high2) {
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
+
+
+$(function(){
+
+var pieces = new Array();
+var nums = new Array();
+var hf = new Array("<stroke>", "<drawing>", "<tag>", "<GML>", "</stroke>", "</drawing>", "</tag>", "</GML>");
+var x, y, z;
+
+var maxLat = 0, maxLng= 0, maxH= 0, minLat= 0, minLng= 0, minH= 0;
+var factorW= 0, factorH= 0;
+var addZ= 0;
+
+
+
+$('#convert').on('click', function(){
+		var docxml = $('#kml').val();
+		var xml = $.parseXML(docxml);
+		var j = 0;
+		var coordinates = "";
+		$(xml).find("coord").each(
+					function()
+					{
+					
+						var txt = $(this).text();
+						txt=txt.replace(/\s+/g, ',');
+						
+						coordinates+=' '+ txt;
+
+					});
+
+
+
+				$(xml).find('coordinates').each(   
+					function()
+					{
+						
+						if($(this).text()!=undefined)
+						coordinates+=' '+$(this).text();
+						
+						j++;
+           		        });
+
+
+				       coordinates = coordinates.replace(/\s{2,}/g,' ');
+           		        coordinates = $.trim(coordinates);
+           		       
+           		         pieces = coordinates.split(" ");
+           		       
+           		         nums = pieces[0].split(',');
+				  minLat = (nums[0]);
+				  minLng = (nums[1]);
+				  minH = (nums[2]);
+				  for (var i=1; i<pieces.length-1; i++){
+				    nums = pieces[i].split( ',');
+				    if (maxLat < (nums[0])) maxLat = (nums[0]);
+				    if (minLat > (nums[0])) minLat = (nums[0]);
+				    if (maxLng < (nums[1])) maxLng = (nums[1]);
+				    if (minLng > (nums[1])) minLng = (nums[1]);
+				    if (maxH < (nums[2])) maxH = (nums[2]);
+				    if (minH > (nums[2])) minH = (nums[2]);
+				  }
+           		        var w = maxLat - minLat;
+				  var h = maxLng - minLng;
+				  if(w > h) {
+				    factorW = 1.0;
+				    factorH = h / w;
+				  }
+				  else{
+				    factorW = w / h;
+				    factorH = 1.0;
+				  }  
+				  
+           		     
+				// Création du GML 
+           		        
+           		        var data = "<GML>\n\t<tag>\n\t\t<drawing>\n\t\t\t<stroke>\n\t\t\t";
+				  for(var i = 0; i < pieces.length-1; i++){
+				    //mapping nums + generate gml data
+				    nums = pieces[i].split( ',');
+				    x = Math.abs(map((nums[0]), minLat, maxLat, 0.0, factorW));
+				    y = Math.abs(1 - map((nums[1]), minLng, maxLng, 0.0, factorH));
+				    addZ += (nums[2])/100;
+				    z = (addZ);
+				    data += "<pt>\n\t\t\t\t<x>"+x+"</x>\n\t\t\t\t<y>"+y+"</y>\n\t\t\t\t<z>"+((i)/(pieces.length*0.2))*100+"</z>\n\t\t\t\t<time>"+((i)/(pieces.length*0.2))+"</time>\n\t\t\t</pt>\n\t\t\t";
+				  }
+				  
+				  data += "</stroke>\n\t\t</drawing>\n\t</tag>\n</GML>";
+				  //add tags which is nessesary for .gml
+				 
+				if (localStorage) {
+				  localStorage["res.gml"]=data;
+				} else {
+				  // localStorage non supporté
+				}
+           		        
+				$('#gmltxt').text(data);
+				$('#share').show();
+				$('#affichage').show();
+				init(data);
+		
+        });
+        
+        
+            $('#share').parent().submit(function(){
+                var gml = $('#gmltxt').val();
+                $('input#gml').val(gml);
+            });
+ });
+ 
+   function init(docgml) {
+	  var gml = $.parseXML(docgml);
+	   pts = new Array();
+	   var i = 0;
+	   loopCount = 0;
+	  
+	  $(gml).find('pt').each(function(){
+			pts[i]=$(this).text();
+			//console.log('PT['+i+'] = '+pts[i]);
+			i++;
+	  });
+	  
+	  var end_time=pts.length;
+	  console.log('End time '+ end_time);
+	  var value= pts[0];
+		var coordinates = value.replace(/\s{2,}/g,' ');
+         coordinates = $.trim(coordinates);
+         pieces = coordinates.split(" ");
+		var x =	pieces[0];
+		var y = pieces[1];
+		 var canvas = document.getElementById('canvas');
+		 var context = canvas.getContext('2d');
+		 context.clearRect(0, 0, 800, 400);
+		  context.beginPath();
+		context.moveTo(x*300,y*150);
+	stop = setInterval(draw,1);
+	
+	context.restore();
+	}
+function draw(){
+
+    var canvas = document.getElementById('canvas');
+	if(pts.length-1 == loopCount) {loopCount=0;
+		
+	}
+    if (canvas.getContext) {
+      var context = canvas.getContext('2d');
+      if(!context) return;
+	  context.clearRect(0, 0, 800, 400);
+	  context.translate(0,0);
+	   context.fillStyle = 'rgba(255, 0, 0, 0.8)';
+		context.strokeStyle = 'rgba(0, 0, 0, 1)';
+	  
+	  
+	  context.lineWidth=3;
+	  
+	 context.save();
+	 
+		var value= pts[loopCount];
+		var coordinates = value.replace(/\s{2,}/g,' ');
+         coordinates = $.trim(coordinates);
+         pieces = coordinates.split(" ");
+		var x =	pieces[0];
+		var y = pieces[1];
+		context.lineTo(Math.floor(x*300),Math.floor(y*150));
+		context.fill();
+		context.restore();
+		context.stroke();
+		context.fill();
+		
+	  	loopCount+=1;
+    } else {
+      // put code for browsers that don’t support canvas here
+      alert("This page uses HTML 5 to render correctly. Other browsers may not see anything.");
+  
+	}
+  }
+  
+  function reset(){
+	var gml = $('#gmltxt').val();
+	$('canvas').empty();
+	clearInterval(stop);
+	
+	init(gml);
+  }
+  
+  
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39521443-1', 'jibébarth.fr');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

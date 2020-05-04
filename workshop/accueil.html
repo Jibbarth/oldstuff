@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+	<title>WorkShop // Origine Tour</title>
+	<link rel="stylesheet" type="text/css" href="animate.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="fonctions.js"></script>
+	<script type="text/javascript">
+
+
+		$(document).ready(function() {
+			redimvid();
+			setTimeout(function(){afficheRond()},3000);
+			setTimeout(function(){$("#carte").show()},6000);
+			$('#map li a').hover(
+			function(){
+				$('#carte').hide();
+				$("#textRond").show();
+			}
+			);
+			$("#pays1").hover(
+			function () {
+				$("#textRond h1").empty().append("France");
+				$("#textRond span").empty().append("Joel de Rosnay carries you in his world");
+				$("#backgroundphoto").attr({src:'france.png'});
+				$("#all").attr({href:'france.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+
+			$("#pays2").hover(
+			function () {
+				$("#textRond h1").empty().append("BRAZIL");
+				$("#textRond span").empty().append(" Jacques Rott discover you the secret of shape in Brazil");
+				$("#backgroundphoto").attr({src:'brazil.png'});
+				$("#all").attr({href:'brazil.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#pays3").hover(
+			function () {
+				$("#textRond h1").empty().append("Hawaii");
+				$("#textRond span").empty().append("George Hennebutte it makes you live the fabulous find lish");
+				$("#backgroundphoto").attr({src:'hawaii.png'});
+				$("#all").attr({href:'hawaii.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#pays4").hover(
+			function () {
+				$("#textRond h1").empty().append("Tahiti");
+				$("#textRond span").empty().append("Michel Barland takes you on an expedition full of history and culture");
+				$("#backgroundphoto").attr({src:'tahiti.png'});
+				$("#all").attr({href:'tahiti.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#pays5").hover(
+			function () {
+				$("#textRond h1").empty().append("Portugal");
+				$("#textRond span").empty().append("Peter Viertel gives you life time of intense portugal");
+				$("#backgroundphoto").attr({src:'portugal.png'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#pays6").hover(
+			function () {
+				$("#textRond h1").empty().append("Spain");
+				$("#textRond span").empty().append("Jo Moraiz tells a fascinating story straight out of Spain");
+				$("#backgroundphoto").attr({src:'spain.png'});
+				$("#all").attr({href:'spain.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#pays7").hover(
+			function () {
+				$("#textRond h1").empty().append("Africa");
+				$("#textRond span").empty().append(" Jacques Rott discover you the secret of shape in Brazil");
+				$("#backgroundphoto").attr({src:'afriquesud.png'});
+				$("#all").attr({href:'southafrica.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#pays8").hover(
+			function () {
+				$("#textRond h1").empty().append("Reunion");
+				$("#textRond span").empty().append(" Jacques Rott discover you the secret of shape in Brazil");
+				$("#backgroundphoto").attr({src:'reunion.png'});
+				$("#all").attr({href:'reunion.html'});
+				redimensionnement();
+				$("#backgroundphoto").show();
+			}
+			);
+			$("#all").hover(
+			function () {
+				$("#backgroundphoto").show();
+			}
+			);
+			$('#map li a').mouseenter(
+			function(){
+
+				$('#backgroundphoto').removeClass('fadeOut');
+				$('#backgroundphoto').addClass('fadeIn');
+
+			}
+			);
+
+			$('#content a').mouseleave(
+			function(){
+				$('#backgroundphoto').removeClass('fadeIn');
+
+				$("#backgroundphoto").hide();
+
+			}
+			);
+
+			$(window).resize(function(){
+				redimvid();
+				redimensionnement();
+			});
+		});
+
+
+
+
+	</script>
+
+</head>
+<body>
+
+	<video id="video_background" src="moskova2.ogg" autoplay loop  ></video>
+	<img src="logotour.gif" alt="" id="logo"/>
+	<img class="animated " src="" alt="" id="backgroundphoto"/>
+	<div id="content">
+		<img src="rond.gif" class="animated " style="display:none" alt="" id="rond" />
+		<ul id="map">
+			<li><a id="pays1" href="france.html"></a>
+			</li>
+			<li><a id="pays2" href="bresil.html"></a></li>
+			<li><a id="pays3" href="hawaii.html"></a></li>
+			<li><a id="pays4" href="tahiti.html"></a></li>
+			<li><a id="pays5" href="portugal.html"></a></li>
+			<li><a id="pays6" href="espagne.html"></a></li>
+			<li><a id="pays7" href="afriquesud.html"></a></li>
+			<li><a id="pays8" href="reunion.html"></a></li>
+			<li></a></li>
+		</ul>
+		<img src="carte.gif" alt="" id="carte" style="display:none" />
+		<a id="all" href="#">
+			<div id="textRond" style="display:none">
+				<h1></h1><hr />
+				<span></span>
+			</div></a>
+		</div>
+		<a href="http://fr.moskova.com/en/Home.html"><img src="img/logo.png" alt="" id="logoMoskova" /></a>
+		<button onClick="toggleSon()"><i id="son" class="icon-volume-off"></i></button>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-39521443-1', 'jib�barth.fr');
+			ga('send', 'pageview');
+
+		</script>
+	</body>
+	</html>

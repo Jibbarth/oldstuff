@@ -1,0 +1,337 @@
+@import url(http://fonts.googleapis.com/css?family=Satisfy|Open+Sans+Condensed:700,300);
+/* General Demo Style */
+
+*,
+*:before,
+*:after { 
+    padding: 0; 
+    margin: 0; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+
+html { height: 100%; }
+
+body {
+    font-family: 'Open Sans Condensed','Arial Narrow', serif;
+    background: #DDD;
+    background:url('../wood.jpg')  no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+    font-weight: 400;
+    font-size: 15px;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.main {
+    width: 90%;
+    min-height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+ header {
+    margin: 10px;
+    padding: 20px 10px 10px 10px;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+ header h1 {
+    font-size: 36px;
+    line-height: 36px;
+    position: relative;
+    font-weight: 300;
+    color: #eee;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+header h2 {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px 0 20px 0;
+    color: #134142;
+    font-family: Cambria, Georgia, serif;
+    font-style: italic;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+
+/* Header Style */
+
+.top {
+    line-height: 24px;
+    font-size: 11px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    z-index: 9999;
+    position: relative;
+    font-family: Cambria, Georgia, serif;
+    box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1
+}
+
+.top a {
+    padding: 0px 10px;
+    letter-spacing: 1px;
+    color: #333;
+    display: inline-block;
+}
+
+.top a:hover {
+    background: rgba(255,255,255,0.6)
+}
+
+.top span.right {
+    float: right
+}
+
+.ctop span.right a {
+    float: left;
+    display: block;
+}
+#wrap {width:530px; margin:80px auto 0; height:100%;}
+
+
+/* CONTENU */
+.toggle{
+	margin-top:20px;
+	width: 120px
+}
+.center {left: 50%;
+position: absolute;
+margin-left: -130px;
+margin-bottom: 30px;}
+.paper{
+	background: #fff url(../images/paged.png)repeat center center;
+	width: 340px;
+	height: 500px;
+	padding: 20px;
+	position:relative;
+	-webkit-box-shadow: 2px 1px 5px rgba(50, 50, 50, 0.89);
+-moz-box-shadow:    2px 1px 5px rgba(50, 50, 50, 0.89);
+box-shadow:         2px 1px 5px rgba(50, 50, 50, 0.89);
+	z-index:0;
+}
+#wrap div{
+	position:absolute;
+}
+
+pre {
+	border : 2px dashed white;
+	background: rgba(0,0,0,0.7);
+	white-space: normal;
+	padding: 10px;
+	color: white;
+
+}
+
+/* POSITION DE DEPART */
+.p1{position:relative;
+	top:0;
+	left:0;
+}
+.p2{
+	position:relative;
+	top: -20px;
+	left: 20px;
+	z-index: -500;
+}
+
+
+/* ANIM */
+
+@-webkit-keyframes toUp {
+	0%{top: -20px;left: 20px;}
+	0%, 100% {-webkit-transform : translateX(0);}	
+	
+	50% {-webkit-transform : translateX(200px) rotate(5deg); z-index:0; -webkit-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+box-shadow:2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : 500;
+		top:0;
+		left:0;	
+	}
+		
+}
+
+@-moz-keyframes toUp {
+	0%{top: -20px;left: 20px;}
+	0%, 100% {-moz-transform : translateX(0);}	
+	50% {-moz-transform : translateX(400px) rotate(5deg); z-index:0; -moz-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+		box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : 500;
+		top:0;
+		left:0;	
+	}
+	
+}
+
+@-ms-keyframes toUp {
+	0%{top: -20px;left: 20px;}
+	0%, 100% {-ms-transform : translateX(0);}	
+	50% {-ms-transform : translateX(400px) rotate(5deg); z-index:0; -ms-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+		box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : 500;
+		top:0;
+		left:0;	
+	}
+	
+}
+
+@-o-keyframes toUp {
+	0%{top: -20px;left: 20px;}
+	0%, 100% {-o-transform : translateX(0);}	
+	50% {-o-transform : translateX(400px) rotate(5deg); z-index:0; -o-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+		box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : 500;
+		top:0;
+		left:0;	
+	}
+	
+}
+
+@keyframes toUp {
+	0%{top: -20px;left: 20px;}
+	0%, 100% {transform : translateX(0);}	
+	50% {transform : translateX(400px) rotate(5deg); z-index:0; box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+	}	
+	100% { z-index : 500;
+		top:0;
+		left:0;	
+	}
+	
+}
+
+.toUp {
+	top: -20px;
+	left: 20px;
+	z-index:-500;
+	-webkit-animation-name: toUp;
+	-moz-animation-name: toUp;
+	-ms-animation-name: toUp;
+	-o-animation-name: toUp;
+	animation-name: toUp;
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-ms-animation-fill-mode: both;
+	-o-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+
+@-webkit-keyframes toDown {
+	
+	0%, 100% {-webkit-transform : translateX(0);}	
+	
+	50% {-webkit-transform : translateX(-200px)rotate(-5deg); z-index:0; -webkit-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+
+box-shadow:         2px 1px 12px rgba(50, 50, 50, 0.89);
+	
+}	
+	100% { z-index : -500;
+		top:-20px;
+		left:20px;
+	}
+		
+}
+
+@-moz-keyframes toDown {
+	0%, 100% {-moz-transform : translateX(0);}	
+	50% {-moz-transform : translateX(-200px)rotate(-5deg); z-index:0; -moz-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+		box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : -500;
+		top:-20px;
+		left:20px;
+	}
+}
+
+@-ms-keyframes toDown {
+	0%, 100% {-ms-transform : translateX(0);}	
+	50% {-ms-transform : translateX(-200px)rotate(-5deg); z-index:0; -ms-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+		box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : -500;
+		top:-20px;
+		left:20px;
+	}
+}
+
+@-o-keyframes toDown {
+	0%, 100% {-o-transform : translateX(0);}	
+	50% {-o-transform : translateX(-200px)rotate(-5deg); z-index:0; -o-box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+		box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);}	
+	100% { z-index : -500;
+		top:-20px;
+		left:20px;
+	}
+}
+
+@keyframes toDown {
+	0%, 100% {transform : translateX(0);}	
+	50% {transform : translateX(-200px)rotate(-5deg); z-index:0; box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+	}	
+	100% { z-index : -500;
+		top:-20px;
+		left:20px;
+	}
+}
+
+.toDown {
+	top: 0px;
+	left: 0px;
+	z-index:500;
+	-webkit-animation-name: toDown;
+	-moz-animation-name: toDown;
+	-ms-animation-name: toDown;
+	-o-animation-name: toDown;
+	animation-name: toDown;
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-ms-animation-fill-mode: both;
+	-o-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
+}

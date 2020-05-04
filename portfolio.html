@@ -1,0 +1,1210 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="assets/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/animate.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/ilightbox.css" media="all" />
+    <title>JiBé Barth //</title>
+    <script src="assets/jquery.js"></script>
+    <script src="assets/ilightbox.js"></script>
+    <script src="assets/raphael.js"></script>
+    <script type="text/javascript" src="assets/jquery.mousewheel.js"></script>
+    <!--[if lte IE 9]> <script type="text/javascript" src="fucking-ie.js"></script> <![endif]-->
+
+    <meta itemprop="name" content="JiBé Barth">
+    <meta itemprop="description" content="Portfolio de JiBé Barth//
+    /Bio
+    /Projets
+    /Contact
+    ">
+    <meta itemprop="image" content="images/profil.jpg">
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('.desc').prepend('<div class="spinner"></div>');
+        });
+    </script>
+</head>
+<body>
+    <div id="overlay" class="animated"><a href="#" class="close">&nbsp;&times;&nbsp;</a>
+        <div id="textAccueil">
+            <pre></pre>
+        </div>
+    </div>
+    <div id="other" class="animated" style="display:none;">
+        <div class="content">
+            <div class="systeme_onglets">
+                <div id="menu"  class="onglets">
+                    <a href="#" id="onglet_etudes" class="onglet onglet_0"  data-numbr="1" onclick="javascript:change_onglet('etudes');">Bio.</a>&nbsp;&nbsp;/&nbsp;
+                    <a href="#"  id="onglet_real" class="onglet onglet_0" data-numbr="2" onclick="javascript:change_onglet('real');">Projets</a>&nbsp;&nbsp;/&nbsp;
+                    <a href="#"  id="onglet_contact" class="onglet onglet_0" data-numbr="3" onclick="javascript:change_onglet('contact');">Contact</a>
+                </div>
+                <div id="contenu" class="contenu_onglets">
+                    <div class="contenu_onglet centre animated" id="contenu_onglet_etudes">
+                        <style type="text/css">
+                            #wrapper {
+                                margin: 0 auto;
+                            }
+                            #header .logo {
+                                margin: 0 0 16px 0;
+                                font-weight: normal;
+                                font-size: 100px;
+                                line-height: 100px;
+                                max-width: 100%;
+                                letter-spacing: 9px;
+                                white-space: nowrap;
+                                text-align: center;
+                            }
+                            #header .logo a {
+                                display: block;
+                                height: 100%;
+                                color: #e6e6e6;
+                                text-decoration: none;
+                            }
+                            #header .slogan {
+                                display: block;
+                                text-align: center;
+                                font-weight: normal;
+                                font-family: "AachenB";
+                                color: #8f8f8f;
+                                font-size: 16px;
+                                line-height: 20px;
+                                text-transform: uppercase;
+                                letter-spacing: 7px;
+                            }
+                            #main {
+                                padding: 0 173px 80px;
+                                width: 800px;
+                                margin: 0 auto;
+                            }
+                            .title h2 {
+                                float: left;
+                                text-transform: uppercase;
+                                line-height: 1.5;
+                                background-color: #333333;
+                                color: white;
+                                padding: 5px;
+                                margin: 5px;
+                                text-align: center;
+                                top: 5px;
+                                border: 3px solid #FFF;
+                                font-size: 25px;
+                                font-family: 'AachenB';
+                                box-shadow: 0px 0px 15px #000;
+                                margin-left: 50px;
+
+                                font-size: 35px;
+                                color: #e6e6e6;
+                                margin: 0;
+                                font-weight: normal;
+                                letter-spacing: 2px;
+
+                            }
+                            .title {
+                                padding: 13px 0 0;
+                                margin: 0 0 10px;
+                                display: inline-block;
+                            }
+                            #main .profile .holder {
+                                width: 100%;
+                            }
+                            #main .profile .holder:after {
+                                content: "";
+                                display: block;
+                                clear: both;
+                            }
+                            #main .profile dl {
+                                margin: 0;
+                                overflow: hidden;
+                                line-height: 22px;
+                                width: 600px;
+                                float: left;
+                            }
+                            #main  dl dt {
+                                float: left;
+                                width: 105px;
+                                padding: 0 45px 0 0;
+                                font-size: 11px;
+                                color: #65676b;
+                                text-transform: uppercase;
+                                font-family: "InterstateBlack";
+                                letter-spacing: 2px;
+                                line-height: 25px;
+                            }
+                            #main .profile dl dd {
+                                overflow: hidden;
+                                margin: 0;
+                                color: #e6e6e6;
+                                font-size: 14px;
+                                font-family: "ptc55f-webfont";
+                                padding: 0 0 22px;
+                            }
+                            #main .profile dl dd a {
+                                color: #e6e6e6;
+                            }
+                            #main .profile dl .social a{
+                                font-family: "InterstateBlack";
+                            }
+                            #main .profile dl .social {
+                                list-style: none;
+                                margin: 0 0 0 -7px;
+                                padding: 0;
+                                overflow: hidden;
+                            }
+                            #main .profile .social li {
+                                float: left;
+
+                                padding: 0 21px 0 7px;
+                            }
+                            /* line 188, assetic_compassfd2Ppu.sass */
+                            #main .profile .social .color-01 {
+                                color: #f64599;
+                            }
+                            #main .profile .social .color-02 {
+                                color: #f7911f;
+                            }
+                            #main .profile .social .color-03 {
+                                color: #2eb8e7;
+                            }
+                            #main .profile .social .color-04 {
+                                color: #dd4b39;
+                            }
+                            #main .profile .social .color-05 {
+                                color: #5574ad;
+                            }
+                            #main .profile .social .color-06 {
+                                color: #7ca935;
+                            }
+                            #main .profile .social .color-07 {
+                                color: #d6156c;
+                            }
+                            #main .profile .social .color-08 {
+                                color: #3c3c94;
+                            }
+                            #main .profile .social .color-09 {
+                                color: #f11e1f;
+                            }
+                            #main .profile .social .color-10 {
+                                color: #00aff0;
+                            }
+                            #main .profile .photo-holder {
+                                float: right;
+                                width: 253px;
+                                height: 257px;
+                                margin: -5px -131px 0 0;
+                                padding: 12px 0 0 24px;
+                            }
+                            #main .profile .photo-holder img {
+                                vertical-align: top;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                border-radius: 50%;
+                                position: relative;
+                                border: 3px solid #FFF;
+                                box-shadow: 0px 0px 15px #000;
+                            }
+                            #main .experience {
+                                padding: 0 0 35px;
+                            }
+                            #main .experience dl, #main .diplomes dl {
+                                overflow: hidden;
+                                margin: 0;
+                                font-size: 12px;
+                                line-height: 22px;
+                            }
+                            #main .experience dl dt span, #main .diplomes dl dt span {
+                                display: block;
+                            }
+                            #main .experience dl dd, #main .diplomes dl dd {
+                                overflow: hidden;
+                                padding: 0 0 46px;
+                                font-family: "ptc55f-webfont";
+                                font-size: 14px;
+                                color: #d3d3d5;
+                                margin: 0;
+                            }
+                            #main .experience dl p, #main .diplomes dl p {
+                                margin: 0;
+                            }
+                            #main .experience dl dd .row, #main .diplomes dl dd .row {
+                                font-size: 18px;
+                                line-height: 20px;
+                                color: white;
+                                font-family: "pts75f-webfont";
+                                padding: 0 0 1px;
+                            }
+                            /* line 288, assetic_compassfd2Ppu.sass */
+                            #main .experience dl dd .row span, #main .diplomes dl dd .row span {
+                                padding: 0 0 0 24px;
+                                color: #6195cb;
+                                font-family: "pts56f-webfont";
+                            }
+                            /* line 294, assetic_compassfd2Ppu.sass */
+                            #main .experience dl dd .link {
+                                font-size: 12px;
+                                padding: 0 0 21px;
+                            }
+                            /* line 297, assetic_compassfd2Ppu.sass */
+                            #main .experience .link a {
+                                color: #65676b;
+                            }
+                            /* line 299, assetic_compassfd2Ppu.sass */
+                            #main .diplomes em {
+                                display: block;
+                                font-style: normal;
+                                font-size: 14px;
+                                color: #65676b;
+                                padding: 0 0 21px;
+                            }
+
+                            /* end main */
+                            /* footer */
+                            /* line 309, assetic_compassfd2Ppu.sass */
+                            #footer {
+                                width: 990px;
+                                margin: 0 auto;
+                            }
+                            /* line 313, assetic_compassfd2Ppu.sass */
+                            #footer .footer-holder {
+                                padding: 98px 20px 40px;
+                                text-align: center;
+                                font-family: "ptc55f-webfont";
+                                font-size: 13px;
+                                color: #47494d;
+                                text-transform: uppercase;
+                            }
+
+                            /* line 322, assetic_compassfd2Ppu.sass */
+                            * + html #footer .footer-holder {
+                                padding: 100px 20px 40px;
+                            }
+
+                            /* line 325, assetic_compassfd2Ppu.sass */
+                            #footer p {
+                                margin: 0;
+                            }
+                            /* line 327, assetic_compassfd2Ppu.sass */
+                            #footer p span {
+                                font-family: "pts75f-webfont";
+                            }
+
+                            /* end footer */
+                            @media(max-width:640px) {
+                                /* line 334, assetic_compassfd2Ppu.sass */
+                                #wrapper, #header .logo, #main .profile dl, #main .profile .photo-holder, #footer {
+                                    width: auto;
+                                    float: none;
+                                }
+
+                                /* line 338, assetic_compassfd2Ppu.sass */
+                                dl dd, dl dt, .logo a {
+                                    -moz-hyphens: auto;
+                                    -webkit-hyphens: auto;
+                                    hyphens: auto;
+                                }
+
+                                /* line 343, assetic_compassfd2Ppu.sass */
+                                body {
+                                    min-width: 150px;
+                                }
+
+                                /* line 347, assetic_compassfd2Ppu.sass */
+
+
+                                /* line 350, assetic_compassfd2Ppu.sass */
+                                #header {
+                                    padding: 25px 15px 78px;
+                                }
+                                /* line 353, assetic_compassfd2Ppu.sass */
+                                #header .top-nav {
+                                    font-size: 12px;
+                                    padding: 0 0 42px 0;
+                                }
+                                /* line 357, assetic_compassfd2Ppu.sass */
+                                #header .top-nav li {
+                                    padding: 0 1px 0 18px;
+                                    background-position: 2px 3px;
+                                }
+                                /* line 361, assetic_compassfd2Ppu.sass */
+                                #header .top-nav li:first-child {
+                                    padding-left: 0;
+                                }
+                                /* line 364, assetic_compassfd2Ppu.sass */
+                                #header .logo {
+                                    margin: 0 auto 40px;
+                                    white-space: normal;
+                                    text-align: center;
+                                    letter-spacing: 7px;
+                                    font-size: 50px;
+                                    line-height: 55px;
+                                }
+                                /* line 372, assetic_compassfd2Ppu.sass */
+                                #header .slogan {
+                                    padding-top: 80px;
+                                }
+
+                                /* line 375, assetic_compassfd2Ppu.sass */
+                                #main {
+                                    padding: 0 15px 40px;
+                                }
+                                /* line 378, assetic_compassfd2Ppu.sass */
+                                #main .title h2,
+                                #main .experience .title h2,
+                                #main .diplomes .title h2 {
+                                    font-size: 46px;
+                                    line-height: 46px;
+                                    font-family: "arvil_sans-webfont";
+                                }
+                                /* line 385, assetic_compassfd2Ppu.sass */
+                                #main .title, #main .experience .title, #main .diplomes .title {
+                                    padding: 13px 0 0;
+                                }
+                                /* line 388, assetic_compassfd2Ppu.sass */
+                                #main .profile dl dt {
+                                    width: 95px;
+                                }
+                                /* line 392, assetic_compassfd2Ppu.sass */
+                                #main .profile .photo-holder {
+                                    min-height: 257px;
+                                    height: auto;
+                                    margin: auto;
+                                    padding-left: 0;
+                                    background-position: 50% 0;
+                                }
+                                /* line 399, assetic_compassfd2Ppu.sass */
+                                #main .profile img {
+                                    display: block;
+                                    margin: 0 auto;
+                                }
+                                /* line 403, assetic_compassfd2Ppu.sass */
+                                #main .experience dl dt,
+                                #main .diplomes dl dt {
+                                    width: 105px;
+                                    padding: 0 25px 0 0;
+                                }
+
+                                /* line 408, assetic_compassfd2Ppu.sass */
+                                #footer {
+                                    background: #191b20 none;
+                                }
+
+                                /* line 410, assetic_compassfd2Ppu.sass */
+                                #footer p {
+                                    max-width: 186px;
+                                    margin: 0 auto;
+                                }
+                            }
+                        </style>
+                        <h1>Bio</h1> <hr />
+                        <div id="wrapper">
+                            <div id="header">
+
+                                <h1 class="logo">
+                                    <a href="#">Jibé Barth</a>
+                                </h1>
+                                <strong class="slogan">
+                                    Developpeur Web
+                                </strong>
+                            </div>
+                            <div id="main">
+                                <div class="profile">
+                                    <div class="title">
+                                        <h2>profil</h2>
+                                    </div>
+                                    <div class="holder">
+                                        <dl>
+                                            <dt>Lieu</dt>
+                                            <dd>
+                                                Bordeaux
+                                            </dd>
+                                            <dt>A propos</dt>
+                                            <dd><p>Je recherche un contrat en Alternance (professionnel ou apprentissage) sur Bordeaux et sa région, de septembre 2013 pour une durée d'un an dans le développement Web</p>
+
+                                            </dd>
+                                            <dt>site web</dt>
+                                            <dd>
+                                                <a href="http://jibébarth.fr" target="_blank" rel="nofollow">jibébarth.fr</a>
+                                            </dd>
+                                            <dt>ici aussi</dt>
+                                            <dd>
+                                                <ul class="social">
+                                                    <li>
+                                                        <a class="color-02" href="http://twitter.com/jibbarth" rel="nofollow" target="_blank">Twitter</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="color-03" href="http://www.facebook.com/jibbarth" rel="nofollow" target="_blank">Facebook</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="color-04" href="http://github.com/Jibbarth" rel="nofollow" target="_blank">Github</a>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                        <div class="photo-holder">
+                                            <img src="images/prof.jpg" width="212" height="212">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="experience">
+                                    <div class="title">
+                                        <h2>Experiences</h2>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <span>              mars 2012
+
+                                            </span>
+                                            <span>      Aujourd’hui
+                                            </span>
+                                        </dt>
+                                        <dd>
+                                            <p class="row">
+                                                UT Hospitality
+                                                <span>Developpeur Web</span>
+                                            </p>
+                                            <p class="link">
+                                                <a href="http://www.uthospitality.fr" target="_blank" rel="nofollow">uthospitality.fr</a>
+                                            </p>
+                                            <p></p><p>Création d'applications hotelieres<br>
+                                                Créations de sites vitrine</p>
+
+                                                <p></p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <span>              mars 2010
+
+                                                </span>
+                                                <span>                  août 2010
+
+                                                </span>
+                                            </dt>
+                                            <dd>
+                                                <p class="row">
+                                                    DSI Corp de La Poste
+                                                    <span>Stagiaire</span>
+                                                </p>
+                                                <p></p><p>Création d'une clé usb live basée sur ubuntu, contenant les principaux outils de travail de l'entreprise.</p>
+
+                                                <p></p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <span>              juil. 2007
+
+                                                </span>
+                                                <span>                  août 2007
+
+                                                </span>
+                                            </dt>
+                                            <dd>
+                                                <p class="row">
+                                                    SeaKing
+                                                    <span>Manutentionnaire</span>
+                                                </p>
+                                                <p></p><p>Protection de meubles de cuisines destinés aux paquebots de croisière</p>
+
+                                                <p></p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <span>              févr. 2005
+
+                                                </span>
+                                                <span>                  févr. 2005
+
+                                                </span>
+                                            </dt>
+                                            <dd>
+                                                <p class="row">
+                                                    Jtec Multimédia
+                                                    <span>Stagiaire</span>
+                                                </p>
+                                                <p></p><p>Montage et assemblage d'ordinateurs dans le cadre du stage en entreprise de 3ème.</p>
+
+                                                <p></p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="diplomes">
+                                        <div class="title">
+                                            <h2>Diplômes</h2>
+                                        </div>
+                                        <dl>
+                                            <dt>
+                                                <span>              oct. 2011
+
+                                                </span>
+                                                <span>                  mai 2013
+
+                                                </span>
+                                            </dt>
+                                            <dd>
+                                                <p class="row">
+                                                    BTS SIO - SLAM
+                                                    <span>
+                                                        IMC Randstad
+                                                        (Paris)
+                                                    </span>
+                                                </p>
+                                                <p></p><p>Diplôme d'Etat en Contrat d'Apprentissage</p>
+
+                                                <p></p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <span>              sept. 2007
+
+                                                </span>
+                                                <span>                  juin 2008
+
+                                                </span>
+                                            </dt>
+                                            <dd>
+                                                <p class="row">
+                                                    Bac S option Math
+                                                    <span>
+                                                        Lycée La Colinière
+                                                        (Nantes)
+                                                    </span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="diplomes">
+                                        <div class="title"><h2>Compétences Techniques</h2></div>
+                                        <div id="diagram"></div>
+                                        <div class="get">
+                                            <div class="arc">
+                                                <span class="text">jQuery</span>
+                                                <input type="hidden" class="percent" value="95" />
+                                                <input type="hidden" class="color" value="#97BE0D" />
+                                            </div>
+                                            <div class="arc">
+                                                <span class="text">Symfony2</span>
+                                                <input type="hidden" class="percent" value="64" />
+                                                <input type="hidden" class="color" value="#EB3F84" />
+                                            </div>
+                                            <div class="arc">
+
+                                                <span class="text">CSS3</span>
+                                                <input type="hidden" class="percent" value="90" />
+                                                <input type="hidden" class="color" value="#D84F5F" />
+                                            </div>
+                                            <div class="arc">
+                                                <span class="text">HTML5</span>
+                                                <input type="hidden" class="percent" value="53" />
+                                                <input type="hidden" class="color" value="#88B8E6" />
+
+                                            </div>
+                                            <div class="arc">
+                                                <span class="text">PHP</span>
+                                                <input type="hidden" class="percent" value="80" />
+                                                <input type="hidden" class="color" value="#BEDBE9" />
+                                            </div>
+                                            <div class="arc">
+                                                <span class="text">MySQL</span>
+                                                <input type="hidden" class="percent" value="45" />
+                                                <input type="hidden" class="color" value="#6DF" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="diplomes">
+                                        <div class="title">
+                                            <h2>Autres</h2>
+                                        </div>
+                                        <dl>
+                                            <dt>
+                                                <span>Sport</span>
+                                            </dt>
+                                            <dd>
+                                                <p class="row">Escrime (pendant 11 ans en club), Skate-Board (Loisir)
+                                                </p>
+                                            </dd>
+                                            <dt>Voyages</dt>
+                                            <dd><p class="row"> Burkina-Faso, Mali, Djibouti, Italie, Guyane Française, New-<br>
+                                                York, Miami</p></dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <script>
+                                    var o = {
+                                        init: function(){
+                                            this.diagram();
+                                        },
+                                        random: function(l, u){
+                                            return Math.floor((Math.random()*(u-l+1))+l);
+                                        },
+                                        diagram: function(){
+                                            var r = Raphael('diagram', 700, 700),
+                                            rad = 73;
+
+                                            r.circle(350, 350, 85).attr({ stroke: 'none', fill: '#193340' });
+
+                                            var title = r.text(350, 350, 'Competences').attr({
+                                                font: '20px AachenB',
+                                                fill: '#fff'
+                                            }).toFront();
+
+                                            r.customAttributes.arc = function(value, color, rad){
+                                                var v = 3.6*value,
+                                                alpha = v == 360 ? 359.99 : v,
+                                                random = o.random(91, 240),
+                                                a = (random-alpha) * Math.PI/180,
+                                                b = random * Math.PI/180,
+                                                sx = 350 + rad * Math.cos(b),
+                                                sy = 350 - rad * Math.sin(b),
+                                                x = 350 + rad * Math.cos(a),
+                                                y = 350 - rad * Math.sin(a),
+                                                path = [['M', sx, sy], ['A', rad, rad, 0, +(alpha > 180), 1, x, y]];
+                                                return { path: path, stroke: color }
+                                            }
+
+                                            $('.get').find('.arc').each(function(i){
+                                                var t = $(this),
+                                                color = t.find('.color').val(),
+                                                value = t.find('.percent').val(),
+                                                text = t.find('.text').text();
+
+                                                rad += 30;
+                                                var z = r.path().attr({ arc: [value, color, rad], 'stroke-width': 26 });
+
+                                                z.mouseover(function(){
+                                                    this.animate({ 'stroke-width': 50, opacity: .75 }, 1000, 'elastic');
+                                                    if(Raphael.type != 'VML') //solves IE problem
+                                                    this.toFront();
+                                                    title.animate({ opacity: 0 }, 500, '>', function(){
+                                                        this.attr({ text: text + '\n' + value + '%' }).animate({ opacity: 1 }, 500, '<');
+                                                    });
+                                                }).mouseout(function(){
+                                                    this.animate({ 'stroke-width': 26, opacity: 1 }, 1000, 'elastic');
+                                                });
+                                            });
+                                        }
+                                    }
+                                    $(function(){ o.init(); });
+                                </script>
+                            </div>
+                            <div class="contenu_onglet centre animated" id="contenu_onglet_real">
+                                <h1>Projets</h1> <hr />
+                                <div id='listeCrea'>
+                                    <div class="desc">
+                                        <h2>Moskova Workshop</h2><a href='./workshop/accueil.html' target="_blank"><img src="images/workshop.png" alt="" />
+                                        <span> Maquette d'un site-web de communication autour d'un évenement sportif organisé par Moskova // <i> Projet d'école</i></span></a>
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc">
+                                        <h2>Répétito</h2><a href='./repetito/accueil.html'
+                                        class="ilightbox"
+                                        data-type="iframe"><img src="images/repetito.png" alt="" />
+                                        <span> Maquette de site web collaboratif pour le logiciel de boucles/sample Répétito. // <i> Projet d'école</i></span></a>
+
+
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc">
+                                        <h2>Carhartt // Nuits blanches</h2><a href="./nuitblanche/accueil.html"  class="ilightbox"
+                                        data-options="width: 1302, height: 500"
+                                        data-type="iframe"><img src="images/nuitblanche.png" alt="" />
+                                        <span>Maquette de site web pour faire de l'évenementiel autour de la marque Carhartt // <i> Projet d'école</i></span></a>
+
+                                    </div>
+                                    <hr class="sep" />
+
+                                    <div class="desc">
+                                        <h2>Girl Collectif</h2>
+                                        <a href="./carhartt/firstpage.html"  class="ilightbox"
+                                        data-options="width: 1002, height: 500"
+                                        data-type="iframe"><img src="images/girlco.png" alt="" />
+                                        <span>Même sujet que pour les nuits blanches, mais axé autour d'un collectif de filles excellant dans le sport extrême
+                                            // <i> Projet d'école</i>
+                                        </span></a>
+
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr='BTS'>
+                                        <h2>Gestion d'accréditations</h2><a href='images/accredit.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/accredit.png" alt="" />
+                                        <span></span></a>
+
+                                    </div>
+                                    <hr class="sep" />
+                                    <!--<h1>Expériences</h1> <hr />-->
+                                    <div class="desc">
+                                        <h2>Personnal Message Creator</h2><a href="images/messageCreator.png" class="ilightbox"
+                                        data-type="image"><img src="images/messageCreator.png" alt="" />
+                                        <span> Créez des messages personnels et envoyez le lien aux personnes concernées.  </span></a>
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc">
+                                        <h2>Superposition de feuilles</h2><a href="./experiments/paperMove.html" class="ilightbox"
+                                        data-options="width: 1002, height: 500"
+                                        data-type="iframe"><img src="images/paperMove.png" alt="" />
+                                        <span> Expérience des transitions et transformation en #css3.  </span></a>
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc">
+                                        <h2>Présentation PPE2</h2><a href="./ppe2/#/home" class="ilightbox"
+                                        data-options="width: 1002, height: 500"
+                                        data-type="iframe"><img src="images/PPE2Presentation.png" alt="" />
+                                        <span> Exposé de présentation du Projet Professionnel Encadré 2 - <i>BTS SIO</i> - avec Jimpress.js </span></a>
+                                    </div>
+                                    <hr class="sep" />
+                                    <!--<h1>BTS</h1> <hr />-->
+                                    <div class="desc animated" >
+                                        <h2>PPE2 - Gestion des formations</h2><a href="images/gestForma.png" class="ilightbox"
+                                        data-type="image"><img src="images/gestForma.png" alt="" />
+                                        <span> Application Web de gestion des Formations pour la maison des ligues de Lorraine. - <i>PHP, Javascript, Mysql </i>- </span></a>
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc">
+                                        <h2>Aquarelle / Vente en ligne de fleurs</h2><a href="images/aquarelle.png" class="ilightbox"
+                                        data-type="image"><img src="images/aquarelle.png" alt="" />
+                                        <span> Site pour la vente en ligne de Fleur - <i>PHP, Mysql </i>- </span></a>
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr='BTS'>
+                                        <h2>PPE 3 - Site Maison Des Ligues</h2><a href='images/m2l.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/m2l.png" alt="" />
+                                        <span>Site de la maison des ligues de lorraine</span></a>
+
+                                    </div>
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr=''>
+                                        <h2>Gestion des concurrents</h2><a href='images/Concurrence.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/Concurrence.png" alt="" />
+                                        <span>Gestion des concurrents</span></a>
+
+                                    </div>
+
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr=''>
+                                        <h2>Gestion des rattachements</h2><a href='images/rattach.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/rattach.png" alt="" />
+                                        <span>Gestion des rattachements</span></a>
+                                    </div>
+
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr=''>
+                                        <h2>Astonet</h2><a href='images/astonet.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/astonet.png" alt="" />
+                                        <span>Astonet - Interface d'administration</span></a>
+                                    </div>
+                                    <hr class="sep" />
+
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr=''>
+                                        <h2>Avocats / Site</h2><a href='images/avocat.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/avocat.png" alt="" />
+                                        <span>Avocats</span></a>
+                                    </div>
+
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr=''>
+                                        <h2>Notes de service</h2><a href='images/note.png'
+                                        class="ilightbox"
+                                        data-type="image" ><img src="images/note2.png" alt="" />
+                                        <span>Notes de service</span></a>
+                                    </div>
+
+                                    <hr class="sep" />
+                                    <div class="desc animated" data-attr=''>
+                                        <h2>KML2GML</h2><a href='kml2gml.js/index.html'
+                                        class="ilightbox"
+                                        data-type="iframe" ><img src="images/kml2gml.png" alt="" />
+                                        <span>kml2gml.js</span></a>
+                                    </div>
+
+                                    <hr class="sep" />
+
+                                    <div id="footer" style="clear:both"></div>
+                                    <h1 style="visibility:hidden">&nbsp;</h1>
+                                </div>
+
+                                <script>
+                                    $(function(){
+                                        $('.ilightbox').bind('click', function(event) {
+                                            event.preventDefault();
+                                            var url=$(this).attr('href');
+                                            var type = $(this).attr('data-type');
+                                            var options=$(this).attr('data-options');
+                                            $.iLightBox([
+                                            {
+                                                URL: url,
+                                                type: type,
+                                                options: {skin:'parade'}
+                                            }
+                                            ]);
+                                        });
+                                    });
+                                </script>
+                                <!--  POUR RAJOUTER UNE CRÉA
+                                    <div class="desc">
+                                        <h2></h2>
+                                        <span></span>
+                                        <img src="" alt="" />
+                                    </div>
+                                -->
+                            </div>
+                            <div class="contenu_onglet centre animated" id="contenu_onglet_contact">
+                                <h1>Contact</h1>
+                                <hr />
+                                <div class="">
+                                    <br /><br />
+                                    <h2> Bonjour, </h2>
+                                    <p>Un Formulaire de contact sera bientôt mis en place. <br />
+                                        En attendant, si vous tenez vraiment à me contacter, n'hésitez pas à m'écrire <a href="mailto:barthjib@gmail.com">ici</a>.
+                                        <br /><br />
+                                        Cordialement.
+                                    </p>
+                                    <hr class="sep" /><br />
+
+                                    <!--
+                                        <a href="https://twitter.com/jibbarth" class="twitter-follow-button" data-show-count="false" data-lang="fr" data-size="large">Suivre @jibbarth</a>
+                                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                    -->
+                                    <style type="text/css">
+                                        section a{
+                                            width: 500px;
+                                            height:400px;
+                                        }
+                                        .card{
+
+
+                                            position:relative;
+                                            width:240px;
+                                            margin:0 auto;
+                                            /*transition*/
+                                            -webkit-transition:opacity .25s, -webkit-filter .25s, filter .25s;
+                                            -moz-transition:   opacity .25s, -moz-filter .25s, filter .25s;
+                                            -o-transition:     opacity .25s, -o-filter .25s, filter .25s;
+                                            transition:        opacity .25s, filter .25s, filter .25s;
+                                        }
+                                        .loading{
+                                            opacity:.5;
+                                            -webkit-filter:grayscale(1);
+                                        }
+                                        .prof{
+                                            position:relative;
+                                            z-index:1;
+                                            float:left;
+                                            width:100px;
+                                            height:200px;
+                                            background:url(images/prof.jpg)  #f9f9f9;
+                                            /*background-size*/
+                                            -webkit-background-size:200% 100%;
+                                            -moz-background-size:200% 100%;
+                                            -o-background-size:200% 100%;
+                                            background-size:200% 100%;
+                                            /*transform-origin*/
+                                            -webkit-transform-origin:left center;
+                                            -moz-transform-origin:left center;
+                                            -ms-transform-origin:left center;
+                                            -o-transform-origin:left center;
+                                            transform-origin:left center;
+                                            /*border-radius*/
+                                            -webkit-border-radius:1em 0 0 1em;
+                                            -moz-border-radius:1em 0 0 1em;
+                                            border-radius:1em 0 0 1em;
+
+                                        }
+                                        .twitter-icon{
+                                            width:16px;
+                                            height:16p;
+                                        }
+                                        .prof:nth-child(2){
+                                            background-position:100px 0;
+                                            /*box-shadow*/
+                                            -webkit-box-shadow:inset 100px 0 rgba(0,0,0,0);
+                                            -moz-box-shadow:inset 100px 0 rgba(0,0,0,0);
+                                            box-shadow:inset 100px 0 rgba(0,0,0,0);
+                                            /*transition*/
+                                            -webkit-transition:all.4s;
+                                            -moz-transition:all.4s;
+                                            -o-transition:all.4s;
+                                            transition:all.4s;
+                                            /*transform*/
+                                            -webkit-transform:perspective(500);
+                                            -moz-transform:perspective(500);
+                                            -ms-transform:perspective(500);
+                                            -o-transform:perspective(500);
+                                            transform:perspective(500);
+                                            /*border-radius*/
+                                            -webkit-border-radius:0 1em 1em 0;
+                                            -moz-border-radius:0 1em 1em 0;
+                                            border-radius:0 1em 1em 0;
+                                        }
+                                        section:hover .prof:nth-child(2){
+                                            /*transform*/
+                                            -webkit-transform:perspective(500) rotateY(-45deg);
+                                            -moz-transform:perspective(500) rotateY(-45deg);
+                                            -ms-transform:perspective(500) rotateY(-45deg);
+                                            -o-transform:perspective(500) rotateY(-45deg);
+                                            transform:perspective(500) rotateY(-45deg);
+                                            /*box-shadow*/
+                                            -webkit-box-shadow:inset 100px 0 rgba(0,0,0,.2);
+                                            -moz-box-shadow:inset 100px 0 rgba(0,0,0,.2);
+                                            box-shadow:inset 100px 0 rgba(0,0,0,.2);
+                                        }
+                                        .sidebar{
+                                            display:block;
+                                            text-decoration:none;
+                                            z-index:0;
+                                            text-align:right;
+                                            /*transform-origin*/
+                                            -webkit-transform-origin:left center;
+                                            -moz-transform-origin:left center;
+                                            -ms-transform-origin:left center;
+                                            -o-transform-origin:left center;
+                                            transform-origin:left center;
+                                        }
+                                        .hgroup{
+                                            position: relative;
+                                            left: -200px;
+                                            top: 0;
+                                            width: 200px;
+                                            display: table;
+                                            height: 30px;
+                                            margin-bottom: 5px;
+                                            border: 1px solid rgba(0, 0, 0, .4);
+                                            padding: 8px 12px;
+                                            color: #888;
+                                            line-height: 16px;
+                                            background: #F9F9F9;
+                                            -webkit-transition: .5s;
+                                            -moz-transition: .5s;
+                                            -o-transition: .5s;
+                                            transition: .5s;
+                                            cursor: pointer;
+                                            -webkit-border-radius: 5px;
+                                            -moz-border-radius: 5px;
+                                            border-radius: 5px;
+                                            margin: 5px 0;
+                                            user-select: none;
+                                            opacity: 0;
+                                        }
+                                        section:hover .sidebar .hgroup{
+                                            left:-120px;
+                                            opacity:1;
+                                        }
+                                        .hgroup:nth-child(2){
+                                            /*transition-delay*/
+                                            -webkit-transition-delay:.1s;
+                                            -moz-transition-delay:.1s;
+                                            -o-transition-delay:.1s;
+                                            transition-delay:.1s;
+                                        }
+
+                                        .hgroup:last-child{
+                                            /*transition-delay*/
+                                            -webkit-transition-delay:.2s;
+                                            -moz-transition-delay:.2s;
+                                            -o-transition-delay:.2s;
+                                            transition-delay:.2s;
+                                        }
+                                        .hgroup strong{
+
+                                            color:#000;
+                                            font-weight:700;
+                                            font-size:14px;
+                                            line-height:16px;
+                                        }
+                                        label{
+                                            position:relative;
+                                            font-size:10px;
+                                            text-transform:uppercase;
+                                        }
+                                        .hgroup:hover, .hgroup:hover strong, a:hover{
+                                            color:#0084B4;
+                                        }
+
+
+                                    </style>
+
+                                    <section id="card" class="card">
+                                        <aside class="prof">
+
+                                        </aside>
+                                        <aside class="prof"></aside>
+
+                                        <a href="https://twitter.com/jibbarth" target="_blank" id="prof_link" class="sidebar">
+                                            <span class="hgroup">
+                                                <strong id="tweets"></strong>
+                                                <label>Tweets</label>
+                                            </span>
+
+                                            <span class="hgroup">
+                                                <strong id="following"></strong>
+                                                <label>Following</label>
+                                            </span>
+
+                                            <span class="hgroup">
+                                                <strong id="followers_count"></strong>
+                                                <label>Followers</label>
+                                            </span>
+                                        </a>
+                                    </section>
+                                    <script type="text/javascript">
+                                        var card = $("#card");
+                                        var name = $("#name");
+                                        var prof = $("aside.prof");
+                                        var prof_link = $("#prof_link");
+                                        var tweets = $("#tweets");
+                                        var following = $("#following");
+                                        var followers_count = $("#followers_count");
+                                        card.addClass("loading");
+
+                                        var ajax_url = 'https://api.twitter.com/1.1/users/show.json?screen_name=jibbarth';
+
+                                        $.ajax({
+                                            type: 'post',
+                                            url : ajax_url,
+                                            dataType : "jsonp",
+                                            success : function(data){
+
+                                                var profile_image_url = data.profile_image_url;
+                                                var prof_img = profile_image_url.replace("_normal", "");
+                                                var prof_href = 'https://twitter.com/' + data.screen_name;
+                                                card.removeClass("loading");
+                                                prof.css("background-image",'url(' + prof_img + ')');
+                                                prof_link.attr("href",prof_href);
+
+                                                tweets.text(data.statuses_count);
+                                                following.text(data.friends_count);
+                                                followers_count.text(data.followers_count);
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                function change_onglet(name)
+                {
+                    var toto = $('#onglet_'+anc_onglet);
+                    document.getElementById('onglet_'+anc_onglet).className = 'onglet_0 onglet ';
+                    var bla = $('#onglet_'+name);
+                    document.getElementById('onglet_'+name).className = 'onglet_1 onglet ';
+                    if($(bla).attr('data-numbr')> $(toto).attr('data-numbr')){
+                        classeOut="fadeOutLeftBig";
+                        classeIn="fadeInRightBig";
+                    }else {
+                        classeOut="fadeOutRightBig";
+                        classeIn="fadeInLeftBig";
+                    }
+                    var anc =document.getElementById('contenu_onglet_'+anc_onglet);
+                    $(anc).removeClass(classeIn);
+                    $(anc).addClass(classeOut);
+                    setTimeout(function(){
+
+                        var now=document.getElementById('contenu_onglet_'+name);
+                        if(first==false){
+                            $(now).addClass(classeIn);
+                        }else first=false;
+                        $(anc).hide();
+                        $(now).show();
+                        $(anc).removeClass(classeOut);
+                    },205);
+
+                    anc_onglet = name;
+                }
+            </script>
+
+            <script type="text/javascript">
+                //<!--
+                    var anc_onglet = 'real';
+                    first=true;
+                    change_onglet(anc_onglet);
+                    //-->
+
+                    var text="<h4><span class='rouge'>\<&#63;php</span>\n<span class='comment'>//<b> Portfolio Jibé Barth... </b></span>\n<span class='comment'>// ... Fevrier 2013</span>\n\n<span class='function'>echo </span> <span class='string'>\" Bonjour. \\n Bienvenue sur mon portfolio. \"</span>; \n<span class='keyword'>if</span>(<span class='variable'>$nbVisite</span>==0) { \n\t<span class='function'>echo </span><span class='string'> \" Vous trouverez ici : _MonParcours et _MesRealisations. \"</span>; \n}\n<span class='function'>echo </span><span class='string'> \"Bonne Visite\"</span>;\n<span class='keyword'>if</span>(<span class='variable'>$interested</span> == <span class='keyword'>true</span>) {\n\t<a href=\"#\" onClick='closeOverlay();' ><span class='function'>commencerVisite</span>();</a>\n}\n<span class='comment'>// NB : Penser à faire une jolie présentation...</span>\n<span class='rouge'>&#63;\></span></h4>";
+                    var currentChar = 1;
+                    var htmltag = false;
+                    var cache = '';
+
+                    function type()
+                    {
+                        var str = text.substr(0, currentChar);
+                        var last = str.substr(str.length -1, str.length);
+                        if(last != '<' && last != '>' & last != '/') {
+                            $("#textAccueil pre").html(str);
+                        }
+                        currentChar++;
+                        if(currentChar <= text.length)
+                        {
+                            if(last == '<') {
+                                htmltag = true;
+                            } else if(last == '>') {
+                                htmltag = false;
+                            }
+                            if(htmltag) {
+                                setTimeout(type, 1);
+                            } else {
+                                setTimeout(type, 60);
+                            }
+                        }
+                    }
+                    function closeOverlay(){
+                        $('#overlay').addClass('fadeOut');
+                        setTimeout(function(){
+                            $('#overlay').remove();
+                            $('#other').show().addClass('bounceInUp')
+
+                        },1500);
+                    }
+                    $(function () {
+
+                        setTimeout(type, 2000);
+                        $('#overlay .close').on('click',$(this),function(){
+                            closeOverlay();
+
+
+                        });
+
+                    });
+                </script>
+                <script>
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+                    ga('create', 'UA-39521443-1', 'jibébarth.fr');
+                    ga('send', 'pageview');
+
+                </script>
+            </body>
+</html>

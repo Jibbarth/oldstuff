@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'Fedra';
+    src: url('FedraSansStd.otf');
+}
+
+@font-face {
+	font-family: 'InterstateBlack';
+	src: url('InterstateBlack.ttf');
+}
+
+table {
+border-collapse: collapse;
+position: relative;
+top:20px;
+
+}
+td, th {
+	text-align:center;
+	border-bottom: 1.5px groove #000;
+	padding: 0.2em 0.2em;
+	border-right: 1.5px groove #000;
+}
+table td b {color:#66DDFF;
+		
+		font-size:65pt;
+		text-align:center;
+		font-style:bold
+		}
+
+table td img {width:100px;
+		height:100px;}
+
+td.droite { border-right:0px;}
+tr.bas td {border-bottom:0px;}
+footer {position:relative;}
+h1,h2 {text-transform:uppercase;}
+
+h2 b{ color: #66ddff;
+	font-size:32pt;
+	top:10px;
+	position: relative;}
+h1{font-family:InterstateBlack;
+	font-size:xx-large;
+	font-style:normal;
+	position:relative;
+	top: 20px;
+	}
+h2{ font-family:Fedra;
+	font-size:small;
+	position:relative;
+	top:-20px;}
+	
+body { background: url(fond.JPG) repeat 99% 50%;
+
+}
+header img{position:absolute;
+		left:3%;
+		top:-30px;}
+header {width: 60%;
+	height: 100px;
+	position: relative;
+	left:20%;
+	right:20%;
+	text-align:center}
+
+a {font-style: normal;
+	color:black;
+	text-decoration:none;}
+div.desc img {width:140px;
+		height:140px;
+		position: absolute;
+		left:5%;
+		top:10%;}
+div.desc {width: 60%;
+	height: 180px;
+	position: relative;
+	left:20%;
+	right:20%;
+	}
+div.desc span {font-family:Fedra;
+		left:25%;
+		right: 7%;
+		top:20%;
+		position: absolute;
+		text-align:justify;
+		}
+div.ajout {width: 60%;
+	height: 180px;
+	position: relative;
+	left:20%;
+	right:20%;}
+div.ajout b {color:#66DDFF;
+		border:2px groove #66DDFF;
+		font-size:80pt;
+		text-align:center;
+		font-style:bold;
+		position: absolute;
+		left:10%;
+		top:10%;
+		}
+div.ajout span {font-family:InterstateBlack;
+		left:20%;
+		right: 7%;
+		top:20%;
+		position: absolute;
+		text-align:center;
+		font-size:xx-large;
+		font-style:normal;
+		text-transform:uppercase}
+div.bio img.profil {width:140px;
+		height:140px;
+		position: absolute;
+		left:0;
+		top:10px;}
+div.bio {width: 60%;
+	position: relative;
+	left:20%;
+	
+	top:20px;
+	}
+div.bio p {font-family:Fedra;
+		left:25%;
+		right:20%;
+		top:10px;
+		width:560px;
+		position: relative;
+		text-align:justify;
+		}
+div.bio div.vid {position:relative;
+		left:25%;
+		right:7%;
+		top:10px;
+		}
+div.bio img.diapo {position:relative;
+		left:25%;
+		right:7%;
+		top:10px;
+		width:560px;
+		height:auto;}
+div.bio hr.sep {position:relative;
+		left:10%;
+		width:560px;
+		}
+
+div.contact {width: 60%;
+	position: relative;
+	left:40%;
+	
+	top:0;
+	}
+div.contact table th { font-family:InterstateBlack;
+			text-align:center
+			color:black;
+			font-size:large;
+			text-transform:uppercase;
+			border: 0px ;
+			padding: 1em 1em;}
+div.contact table td {border: 0px ;
+			padding: 1em 1em;
+			}
+div.contact b	{color:#66DDFF;
+		border:2px groove #66DDFF;
+		font-size:80pt;
+		text-align:center;
+		font-style:bold;
+		position: relative;
+		left:25%;
+		top:-12px;
+		opacity:0.5;}
+div.contact img {left:-25%;
+		position:relative;
+		z-index:-1;}
+div.exp img.profil {width:140px;
+		height:140px;
+		position: absolute;
+		left:0;
+		top:10px;}
+div.exp b {color:#66DDFF;
+		z-index:2;
+		font-size:80pt;
+		text-align:center;
+		font-style:normal;
+		position: absolute;
+		left:0;
+		top:20px;
+		font-family:Fedra;
+		
+
+}
+div.exp p.info {width:150px;
+		position:absolute;
+		left:0px;
+		top:140px;
+		font-family:InterstateBlack;
+		font-size: normal;
+		text-transform:uppercase;
+		font-style:bold;
+		text-align:center;
+		}
+div.exp {width: 60%;
+	position: relative;
+	left:20%;
+	
+	top:20px;
+	}
+div.exp p {font-family:Fedra;
+		left:25%;
+		right:20%;
+		top:10px;
+		width:560px;
+		position: relative;
+		text-align:justify;
+		}
+div.exp div.vid {position:relative;
+		left:25%;
+		right:7%;
+		top:10px;
+		}
+div.exp h3 {font-family:InterstateBlack;
+		text-transform:uppercase;
+		position: relative;
+		left:25%;
+		top:10px;}
+

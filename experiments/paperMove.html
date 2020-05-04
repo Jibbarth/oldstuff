@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+	<title>Paper Move</title>
+	<link rel="stylesheet" type="text/css" href="css/papermove.css" media="all" />
+	<script  src="js/jquery.js"></script>
+	<script type="text/javascript">
+		function toggle(){
+			
+			if($('#paper2').hasClass('toDown')){
+				$('#paper2').removeClass('toDown');
+				$('#paper2').addClass('toUp');
+				$('#paper1').addClass('toDown');
+				$('#paper1').removeClass('toUp');		
+			}else if($('#paper2').hasClass('toUp')){			
+				$('#paper1').addClass('toUp');
+				$('#paper1').removeClass('toDown');
+				$('#paper2').addClass('toDown');
+				$('#paper2').removeClass('toUp');
+			}else{
+				$('#paper1').addClass('toDown');
+				$('#paper2').addClass('toUp');
+				$('.paper').removeClass('p1').removeClass('p2');
+			}
+		}
+	</script>
+</head>
+<body>
+	  <div class="top clearfix">
+                <a href="http://jibébarth.fr">
+                    <strong>Jibé Barth // Experiments </strong>
+                </a>
+            </div>
+	<button class="center toggle" onClick="toggle();">Change Paper</button>
+	<div id="wrap">
+	 	<div>
+			<div class="paper p1" id="paper1">
+				<h1>PAPIER 1</h1>
+				<pre>@keyframes toDown {
+	0%, 100% {transform : translateX(0);}	
+	50% {transform : translateX(-200px); z-index:0; box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+	}	
+	100% { z-index : -500;
+		top:-20px;
+		left:20px;
+	}
+}</pre>			
+			</div>
+			<div class="paper p2" id="paper2">
+				<h1>PAPIER 2</h1>
+				<pre>
+				
+				@keyframes toUp {
+	0%, 100% {transform : translateX(0);}	
+	50% {transform : translateX(400px); z-index:0; box-shadow: 2px 1px 12px rgba(50, 50, 50, 0.89);
+	}	
+	100% { z-index : 500;
+		top:0;
+		left:0;	
+	}
+	
+}
+
+				</pre>			
+			</div>
+			
+		</div>
+		
+	</div>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39521443-1', 'jibébarth.fr');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

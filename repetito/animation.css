@@ -1,0 +1,47 @@
+#wrapper {
+	width:400px;
+	-webkit-perspective:800 ;
+	}
+
+#allPlan{
+	width:100px;
+	height:150px;
+	margin: 0 auto;
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: caroussel 20s infinite  linear;
+	}
+.plan a audio{display:none;}
+.plan 
+
+.plan a:hover img:hover audio {display:block;
+				 position:relative;	
+				}
+.plan span {
+								width:150px;
+								padding:0px;
+								border:1px solid #333;
+								background:#111;
+								color:#fff;
+								text-align:justified;
+								filter:alpha(opacity=80);
+								opacity:0.8;}
+.plan{
+	position:absolute;
+	height:150px;
+	width:150px;
+	text-align:centered;
+	
+	color:#FFF;
+	background-color: rgba(0,0,0,0.7);
+	}
+@-webkit-keyframes caroussel {
+	from{ -webkit-transform: rotateY(360deg);}
+	to{ -webkit-transform: rotateY(0deg);}
+}	
+
+#allPlan > .p1{ -webkit-transform: translateZ(150px);}
+#allPlan > .p2{ -webkit-transform: rotateY(72deg) translateZ(150px);}
+#allPlan > .p3{ -webkit-transform: rotateY(144deg) translateZ(150px);}
+#allPlan > .p4{ -webkit-transform: rotateY(216deg) translateZ(150px);}
+#allPlan > .p5{ -webkit-transform: rotateY(288deg) translateZ(150px);}
+

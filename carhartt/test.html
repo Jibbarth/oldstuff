@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Video</title>
+	<style type="text/css">
+	#video_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+ height:auto;
+bottom:0;
+right:0;
+  z-index: -1000;
+}
+#logo{
+	position:fixed;
+	z-index:1000;
+	left:50%;
+	top:150px;
+	margin-left:-200px;
+	width:400px;
+	height:auto;
+}
+	</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+
+	$(document).ready(function() {
+setTimeout(function(){alert('test')},3000);
+});
+
+</script>
+
+</head>
+<body>
+	<video id="video_background" src="moskova.ogv" autoplay loop></video>
+	<img src="logotour.gif" alt="" id="logo"/>
+	<div id="test" style="display:none">Test</div>
+</body>
+</html>

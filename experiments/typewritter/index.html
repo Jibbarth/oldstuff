@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title>TypeWritter Like</title>
+	<style type="text/css">
+		#typewritter{
+			width: 100%;
+			height: 100%;
+			margin:0;
+			padding: 10px;
+			position: absolute;
+			top:0;
+			left: 0;
+			font-size: 3em;
+		}
+
+		#share {
+			position: absolute;
+			z-index: 9999;
+			bottom:10px;
+			right:10px;
+			display: inline-block;
+		}
+
+	</style>
+	<script src="jquery.js" ></script>
+
+</head>
+<body>
+	<img src="time_60.png">
+	<h1>TypeWritter.. An Old School TextArea</h1>
+	<p>By <a href="http://jibébarth.fr">Jibé Barth</a></p>
+	<div id="fb-root"></div>
+	<textarea id="typewritter">	Hi ! Please, enable song and type some words...
+	</textarea>
+
+	<script type="text/javascript">
+		var sounds = {
+			"space1" : "data/space.mp3",
+			"space2" : "data/space-new.mp3",
+			"backspace" : "data/backspace.mp3",
+			"return" : "data/return.mp3",
+			"return-new" : "data/return-new.mp3",
+			"key1" : "data/key-01.mp3",
+			"key2" : "data/key-02.mp3",
+			"key3" : "data/key-03.mp3",
+			"key4" : "data/key-04.mp3",
+			"key-new1" : "data/key-new-01.mp3",
+			"key-new2" : "data/key-new-02.mp3",
+			"key-new3" : "data/key-new-03.mp3",
+			"key-new4" : "data/key-new-04.mp3",
+			"key-new5" : "data/key-new-05.mp3"
+		}
+
+		$(function() {
+			listenTap();
+		});
+
+		/**
+		 * Register event on a list of input
+		 */
+		function listenTap()
+		{
+			$txtArea = $('#typewritter');
+
+			$txtArea.on('focus', function(e) {
+				play('return-new');
+			});
+
+			$txtArea.on('keydown', function(e){
+				var code = e.keyCode ? e.keyCode : e.which;
+				console.log(code);
+				var key = getKeyForCode(code);
+				play(key);
+				if(code == 9) {//tab
+					this.value += '\t';
+					return false;
+				} else {
+					return true;
+				}
+			})
+		}
+
+		/**
+		 * Play song for a given key
+		 * @param string key
+		 */
+		function play(key) {
+			var audio = new Audio(sounds[key]);
+			audio.play();
+		}
+
+		/**
+		 * Get Key for a code corresponding to a keydown
+		 * @param int code
+		 */
+		function getKeyForCode(code) {
+			var key;
+			switch(code) {
+				case 13: // enter
+					key = "return";
+					break;
+				case 32:  // space
+					var random = Math.floor((Math.random()*2)+1);
+					key = "space" + random;
+					break;
+				case 8: // backspace
+				case 9: //tab
+					key = "backspace";
+					break;
+				default: // all other key
+					var random = Math.floor((Math.random()*4)+1);
+					key = "key" + random;
+					break;
+			}
+			return key;
+		}
+	</script>
+
+</body>
+</html>

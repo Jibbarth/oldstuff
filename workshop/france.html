@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+	<title>France // WorkShop</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="turn.js"></script>
+	<script type="text/javascript" src="fonctions.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="animate.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />	
+
+
+	<style type="text/css">
+html { 
+  margin:0;
+  padding:0;
+  background: url(france.png) no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+.animated {
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+	</style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+				
+	$('#galery').click(
+		function(){
+			$("#contenu").removeClass('fadeInLeft');
+			$('#contenu').addClass('fadeOut');
+			$( "#contenu" ).empty();				
+					$("#contenu").removeClass('fadeOut');
+					$('#contenu').addClass('fadeInLeft');
+					$("#head h1").empty().append('Gallery Photo / Video');
+					$( "#contenu" ).empty().append("<div id='magazine'><div id='page1' class='page pageD'><img src='img/img1.jpg'><img src='img/img2.jpg' ></div><div id='page2' class='page pageG'>	<img src='img/img3.jpg' ><img src='img/img5.jpg' ></div><div id='page3' class='page pageD'><img src='img/img4.jpg' ></div><div id='page4' class='page pageG'><img src='img/img6.jpg' ></div></div>");
+			var mag = $('#magazine');
+			// initiazlie turn.js on the #magazine div
+			mag.turn();		
+		}
+	);
+	$('#live').click(
+		function(){
+			$("#contenu").removeClass('fadeInLeft');
+			$('#contenu').addClass('fadeOut');
+			$( "#contenu" ).empty();	
+			$("#contenu").removeClass('fadeOut');
+					$('#contenu').addClass('fadeInLeft');
+					$("#head h1").empty().append('THE WORK SHOP LIVE');
+					$( "#contenu" ).append('<iframe width="700" height="400" src="http://www.youtube.com/embed/srMDxzEHGBk" frameborder="0" allowfullscreen></iframe>');
+				
+			
+		
+		}
+	);
+	$('#anim').click(
+		function(){
+			$("#contenu").removeClass('fadeInLeft');
+			$('#contenu').addClass('fadeOut');
+			$( "#contenu" ).empty();	
+			$("#contenu").removeClass('fadeOut');
+					$('#contenu').addClass('fadeInLeft');
+					$("#head h1").empty().append('Joel de Rosnay');
+					$( "#contenu" ).append('<iframe width="700" height="400" src="http://www.youtube.com/embed/S0Xpxk2l5UA" frameborder="0" allowfullscreen></iframe>');
+				
+			
+		
+		}
+	);
+	$('#prog').click(
+		function(){
+			$("#contenu").removeClass('fadeInLeft');
+			$('#contenu').addClass('fadeOut');
+			$( "#contenu" ).empty();	
+			
+					$("#contenu").removeClass('fadeOut');
+					$('#contenu').addClass('fadeInLeft');
+					$("#head h1").empty().append('Program of WORK SHOP');
+					$( "#contenu").empty().append("<div id='book'><div id='page1' class='page p2 pageG'><div><h2>PROGRAM</h2><br ><br ><p><span>Joel de Rosnay takes you on his surf culture for 3 days of intensive discovery between surfing and literature.</span> <br ><br >- The first day of visit best surfing spot with French 1, Basque surfer <br >Party with loco singer of the era <br ><br >- 2nd day Conferance joel rosnay on his latest book «surfing life» with diverse experiances <br ><br >- 3rd day meeting with the shaper joel rosney and test the board after noon.</p></div></div><div id='page2' class='page p3 pageD'><div>	<h2>Participants</h2><br ><br >	<ul>			<li>Leo Sarfaty</li>				<li>Hugo Cornec</li>				<li>Vincent Pirmel</li>				<li>Rémy Hamilton</li>				<li>Gabriel Medina</li>				<li>Raoul Medour</li>			</ul><br ><h2>DATES <br >			AUGUST 23 TO 25				</h2>		</div>	</div></div>");
+				
+		}
+	);
+	
+	
+});
+
+</script>
+</head>
+<body>
+
+<a href="accueil.html"><img src="logotour.gif" alt="" id="logopays"/></a>
+<a href="http://fr.moskova.com/en/Home.html"><img src="img/logo.png" alt="" id="logoMoskova" /></a>
+
+<div id="menu">
+
+	<div class="onglet1">work shop origine tour - france</div>
+	<div class="onglet2"><a href="#" id="live" >THE WORK SHOP LIVE</a></div>
+	<div class="onglet3"><a href="#" id="anim">joel de rosnay</a></div>
+	<div class="onglet4"><a href="#" id="prog">program of work shop</a></div>
+	<div class="onglet5"><a href="#" id="galery">GALLERY PHOTO / VIDEO</a></div>
+	<div class="onglet6"><a href="#" id="forum">FORUM</a></div>
+
+</div>
+
+<div id="container">
+	<div id="head"><h1>The work Shop Live</h1></div>
+	<div id="contenu" class="animated">
+		<iframe width="700" height="400" src="http://www.youtube.com/embed/srMDxzEHGBk" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39521443-1', 'jibébarth.fr');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

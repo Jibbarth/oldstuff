@@ -1,0 +1,243 @@
+﻿@font-face {
+    font-family: 'AachenB';
+    src: url('aachen-bold-bt.ttf');
+}
+@font-face {
+	font-family: 'DIN_1451';
+	src: url('DIN_1451_Engschrift_LT.ttf');
+}
+@font-face {
+    font-family: 'LT_11440';
+    src: url('LT_11440.ttf');
+}
+@font-face {
+    font-family: 'LT_11441';
+    src: url('LT_11441.ttf');
+}
+@font-face {
+    font-family: 'LTe50845';
+    src: url('LTe50845.ttf');
+}
+@font-face {
+    font-family: 'LTe50846';
+    src: url('LTe50846.ttf');
+}
+@font-face {
+    font-family: 'LTe50847';
+    src: url('LTe50847.ttf');
+}
+@font-face {
+    font-family: 'LTe50848';
+    src: url('LTe50848.ttf');
+}
+@font-face {
+    font-family: 'Optima';
+    src: url('Optima.ttf');
+}
+
+body { background-color: #131619;
+		color:white;
+	
+	}
+li {list-style-type:none;}
+#header {
+		font-family:AachenB;
+		font-size: 4em;
+		position:absolute;
+		text-align : center;
+		font-style: bold;
+		top:5%;
+		left:15%;
+		right:15%;
+		
+		}
+#header small {
+		font-size: 0.7em;
+		position:relative;
+		bottom: -5px;	
+		text-align : center;
+		}
+#header hr { color: grey;
+			background-color:grey;
+			height: 1px;
+			border: 0;
+			width:75%;
+			left:12.5%;
+			right:12.5%;
+			position:relative;
+			top:-10px;}
+			
+#menu { color:grey;
+		position: absolute;
+		top: 14%;
+		left:20%;
+		right:20%;
+		font-family:AachenB;
+		font-size: large;
+		font-style:bold;
+		text-align:center;
+		}
+		
+#menu a {color:grey;}
+#menu a.active {color:yellow;}	
+#menu a:hover {color: yellow;
+				
+				font-style: bold;
+				text-decoration:none;}
+				
+#side {position:absolute;
+		text-align:right;
+		font-family:LTe50848;
+		font-size:normal;
+		text-transform: uppercase;
+		color:white;
+		left:5%;
+		top: 20%;
+		right:80%;
+		}
+#side a iframe{display:none}
+#side a:hover iframe {display:block;
+					position:absolute;
+					left:216px;
+					top:0%;
+					width:797px;
+					height:367px;
+					z-index:2;
+					border-radius: 20px;}
+#side a {color:white;}
+#side a img{display:none;}
+
+#side a:hover {color: yellow;
+				font-size:1.1em;
+				font-style: bold;
+				text-decoration:none;}
+#side li a:hover img {display:block;
+					position: absolute;
+					left:216px;
+					top:0%;
+					width:797px;
+					height:367px;
+					z-index:2;
+					border-radius: 20px;
+					}
+#sidecarte {position:absolute;
+		text-align:right;
+		font-family:LTe50848;
+		font-size:normal;
+		text-transform: uppercase;
+		color:white;
+		left:5%;
+		top: 20%;
+		right:80%;
+		
+		}
+#sidecarte a {color:white;}
+#sidecarte a img{display:none;}
+
+
+#sidecarte a:hover {color: yellow;
+				font-size:1.1em;
+				font-style: bold;
+				text-decoration:none;}
+#sidecarte li a:hover img {display:block;
+					position: absolute;
+					z-index:2;
+					left: 216px;
+					top:0%;
+					
+}
+#centre img.elzo{ width: 648px;
+							height:180px;
+							top:-358px;
+							z-index:2;}
+#centre img.klan { width:595px;
+							height:30px;
+							top:-325px;
+							z-index:2;}
+#centre img.grito {width: 666px;
+				height:150px;
+				top:-119px;
+				z-index:2;}
+#centre {position: absolute;
+		left: 0;
+		top:0;
+		right: 20%;
+		bottom:23%;
+}
+#sidecarte #centre {position: absolute;
+		left: 0;
+		top:0;
+		right: 20%;
+		bottom:23%;
+}
+#sidecarte #centre img {width:797px;
+			height:397px;
+			position:relative;
+			}
+
+#centre img {width:797px;
+			height:367px;
+			position:relative;
+			}
+
+#footeurtitre {position: absolute;
+			top:370px;
+			left:3%;
+			right:20%;}
+#footeurtitre h3 {color: white;
+			font-size: large;
+			font-style:regular;
+			font-family: AachenB;
+			text-transform:uppercase;
+
+			
+}
+#footeur { color:white;	
+
+		position:absolute;
+		top: 410px;
+		left:0;
+		right:0;
+		
+		font-family:LTe50848;
+		font-size:small;
+		font-style:bold;
+		text-align:justify;
+		column-count:2;
+		column-gap:20px;
+		-moz-column-count: 2;
+-moz-column-gap: 20px;
+-o-column-count: 2;
+-o-column-gap: 20px;
+-webkit-column-count: 2;
+-webkit-column-gap: 20px;
+  }
+#footeur h3 { color: white;
+			font-size: large;
+			font-style:bold;
+			text-transform:uppercase;
+}
+
+#footeur span b{ color:yellow}
+.onglet
+        {
+				color:white;
+                cursor:pointer;
+        }
+        .onglet_0
+        {
+              color:white;  
+        }
+        .onglet_1
+        {
+                color:yellow;
+        }
+        .contenu_onglet
+        {		display:none;
+                position: absolute;
+				left: 21%;
+				top:20%;
+				right: 20%;
+				bottom:23%;
+                
+        }

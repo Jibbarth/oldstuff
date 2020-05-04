@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Surprise</title>
+        <link rel="stylesheet" type="text/css" href="css/gif.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" media="all" />
+             <link rel="stylesheet" type="text/css" href="css/julie.css" />
+        <link rel="stylesheet" type="text/css" href="css/pfold.css" />
+
+       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+
+	   <script type="text/javascript" src="js/gif.js"></script>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<!--[if lte IE 8]><style>.support-note .note-ie{display:block;}</style><![endif]-->
+		<style>
+
+			.container > header h1 {
+			    color: #fff;
+			    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+			}
+
+			.container > header h2,
+			p.info  {
+			    color: #4e2f1d;
+			    text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+			}
+		</style>
+    </head>
+    <body>
+	<div id="frame-wrap container">
+	<a data-href="/Tc" gc-count="31" gc-delay="100" gc-height="281" gc-width="500" id="frame" style="background-image: url(images/skate.png); background-size: 44640px 810px; background-position: -10080px -167px;  ">
+
+	<img class="live" src="images/skate.png" />
+    </a>
+            <div class="top clearfix">
+                <a href="http://jibébarth.fr">
+                    <strong>Jibé Barth // Experiments </strong>
+                </a>
+		<div style="float:right">Thanks to <a href="http://tympanus.net/codrops/2012/10/17/pfold-paper-like-unfolding-effect/">Codrops</a> & <a href="http://gifctrl.com/">Gifctrl</a></div>
+            </div>
+		<header>
+
+				<h1>Une <strong>Surprise</strong> t'attend ...</h1>
+
+				<div class="support-note"><!-- let's check browser support with modernizr -->
+					<span class="no-csstransforms3d">Mais il te faut un navigateur internet à la pointe de la technologie, genre Chrome</span>
+					<span class="note-ie">Serieusement, vous utilisez IE?</span>
+				</div>
+
+			</header>
+			<section class="main demo">
+
+				<div id="uc-container" class="uc-container">
+					<div class="uc-initial-content">
+						<!-- custom content -->
+						<span class="clickme"> <span class="op">+</span>&nbsp;Ouvre moi</span>
+					</div>
+					<div class="uc-final-content">
+						<!-- custom content -->
+						<div class="scrollwrap">
+							<h3>Hello 👋</h3>
+							<p>Je te souhaite un très joyeux <b>anniversaire</b>, par le biais de
+cette page web que j'espère tu appréciera. <br /><tab/>
+							<br /> Gros bisous et à bientôt ! ❤️</p>
+							<p class="signature">JiBé</p>
+
+						</div>
+						<div id="attachedPicture" class="uc-container">
+							<a href="" class="clip"><img class="animated" src="paper-clip.png"/></a>
+							<div class="uc-initial-content">
+							<!-- custom content -->
+
+							<span class="clickme2" > <span class="op">+</span>&nbsp;Pièce jointe</span>
+							</div>
+							<div class="uc-final-content">
+								<img src="images/birthday.webp" alt="" style="width:300px;"/>
+								<span class="close2">x</span>
+							</div>
+						</div>
+						<span class="close">x</span>
+					</div>
+				</div>
+
+			</section>
+
+
+		</div>
+	<script type="text/javascript" src="js/jquery.pfold.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				function bougePaperClip(){
+
+				$("#attachedPicture .uc-initial-content").mouseenter(function(){
+
+					$('#attachedPicture .clip img').animate({marginTop:"-20px"},500);
+
+
+				});
+				$("#attachedPicture .uc-initial-content").mouseleave(function(){
+					$('#attachedPicture .clip img').animate({marginTop:"0px"},500);
+				});
+				}
+				var $container = $( '#uc-container' ),
+					letter = $( '#uc-container' ).pfold({
+						easing : 'ease-in',
+						folds : 1,
+						folddirection : ['left'],
+						centered:true,
+					});
+
+				$container.find( 'span.clickme' ).on( 'click', function() {
+
+					letter.unfold();
+					$("#attachedPicture").animate({marginTop: "240px", marginLeft: "-20px"}, 1000 );
+					bougePaperClip();
+
+				}).end().find('span.close').on('click',function(){
+					$("#attachedPicture").animate({marginTop: "150px", marginLeft: "0px"}, 1500 );
+					$('#attachedPicture .clip img').removeClass("fadeInDownBig");
+					letter.fold();
+
+				});
+
+
+				var $photo = $( '#attachedPicture' ),
+					photo = $( '#attachedPicture' ).pfold({
+						easing : 'ease-in',
+						folds : 2,
+						folddirection : ['left','bottom'],
+						centered:true,
+					});
+
+				$photo.find(  'span.clickme2'  ).on( 'click', function() {
+
+					photo.unfold();
+					$('#attachedPicture .clip img').removeClass("fadeInDownBig");
+					$('#attachedPicture .clip img').addClass('fadeOutUpBig');
+
+				}).end().find('span.close2').on('click',function(){
+
+					photo.fold();
+					$('#attachedPicture .clip img').removeClass("fadeOutUpBig");
+					$('#attachedPicture .clip img').addClass('fadeInDownBig');
+					bougePaperClip();
+
+				});
+			});
+		</script>
+
+    </body>
+</html>

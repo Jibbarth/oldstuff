@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>PPE 2 / Presentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="anim.css" media="all" />
+		<link id="theme" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/start/jquery-ui.css" rel="stylesheet" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="jmpress.demo.js"></script>
+	<style type="text/css">
+		td{
+		border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+
+<ul id="nav">
+	<li><a href="#home"><span>Accueil</span></a></li>
+	<li><a href="#about"><span>A propos</span></a></li>
+	<li><a href="#etude"><span>Etude Economique</span></a></li>
+	<li><a href="#docs"><span>Gestion des Formations</span></a></li>
+
+</ul>
+
+<a id="global-prev" href="#" class="prev" style="display:none">&lt;</a>
+<a id="global-next" href="#" class="next" style="display:none">&gt;</a>
+
+<div id="jmpress" class="normal-mode" data-template="main">
+	<div id="home" class="step init-css">
+		<div class="intro-top ui-state-default">
+			<div class="inner">
+				<h4>PPE - 2</h4>
+				<h1 class="ui-state-text">M2L</h1><br /><br />
+				<h2></h2>
+				<p></p>
+				<span class="ui-icon ui-icon-star"></span>
+				<!-- no tabbable things here -->
+				<a href="#" style="visibility: hidden" class="next">next &gt;</a>
+			</div>
+		</div>
+		<div class="intro-bottom ui-state-default">
+			<div class="inner">
+				<h4>PPE - 2</h4>
+				<h1 class="ui-state-te	xt"><br /></h1>
+				<h2>Maison des ligues de Lorraine</h2>
+				<p>Un PPE réalisé par K.Smadja, Y.Attia & JB.Barth</p>
+				<span class="ui-icon ui-icon-star"></span>
+				<a href="#" class="next">Demarrer &gt;</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="about" class="step">
+		<h2>Contexte</h2>
+		 <ul>
+		 	<li><b>Qui ? : </b><br /> La maison des ligues de lorraine. Association qui a pour mission de fournir des espaces et des services aux différentes ligues sportives régionales et à d’autres structures hébergées</li>
+		 	<li><b>Quoi ? :</b><br />
+				La M2L nous demande trois choses. <br /> 1/ Definition d'un prestataire pour la mise en oeuvre de la visoconférence.
+				<br /> 2/ Tester l'application de gestion de réservation des salles déjà en place.
+				<br /> 3/  Mettre en place une application de gestion des formations.
+			</li>
+
+		 </ul>
+	</div>
+    <div id="etude" class="step">
+		<h1>Etude économique</h1>
+		<p> Pour l'installation d'un systeme de visioConférence, nous avons fait appel à plusieurs entreprises pour établir un devis.</p>
+		<p> Nos choix se sont porté sur 3 entreprises expertes dans ce secteur. <br /></p>
+			<ul>
+				<li>CBI Technologies</li>
+				<li>DW Pro</li>
+				<li>G2J</li>
+			</ul>
+
+
+    </div>
+	<div id="etude-comp" class="step">
+		<h2>Comparatif des devis reçus</h2>
+		<table>
+			<thead>
+				<td>&nbsp;</td>
+				<tD>CBi Technologies</td>
+				<td>DW Pro</td>
+				<td>G2J</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Prix TTC</td>
+					<td>4593,50€</td>
+					<td>4520,88€</td>
+					<td>5168,00€</td>
+				</tr>
+				<tr>
+					<td>Les +</td>
+					<td>Table 9 personnes</td>
+					<td>Ecran Haute définition</td>
+					<td>Chariot multimédiat</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<div id="etude-final" class="step">
+		<h1>Compte Rendu</h1>
+		<p>
+		Notre choix s'est porté sur l'offre de CBi Technologie. Légerement plus chère que l'offre de DWPro, mais nettement moins que celle de G2J,
+		elle apporte un bon compromis entre les deux autres offres avec notamment, un chariot multimédiat, une table neuf personnes, et un écran d'une qualité honorable.
+		<ul>
+			<li>Conseil pour M. Sapin : CBi technologie</li>
+		</ul>
+
+	</div>
+
+	<div id="docs" class="step" style="display:none">
+		<h1>Application :</h1>
+		<h2>Gestion des formations</h2>
+		La m2l souhaite, en plus de pouvoir gérer les réservations de salle, pouvoir gérer les formations qui s'y passe.
+		Une interface comprenant la liste des formations, la liste des formateurs, et la liste du personnel est demandé. <br />Il doit être possible de
+		savoir quel formateur organise quelle formations, ainsi que les différents participants a chaque formation.
+
+	</div>
+
+	<div id="docs-analyse" class="step">
+	<h2>Analyse:</h2>
+		<p> Une définition de la base de donnée a été faite. Elle comprendra 4 tables :</p>
+		<ul>
+			<li>Fomation : liste des formations comprenant son nom, sa description, l'heure a laquelle elle est prévue, et une clé étrangere vers le formateur</li>
+			<li>Organisateur : Liste des organisateurs de formation.</li>
+			<li>Personnel : Liste du personnel qui pourra assister a une formation. </li>
+			<li>Participant : Table de correspondance entre la formation et le participant.</li>
+		</ul>
+
+	</div>
+	<div id="docs-realisation" class="step">
+		<h2>Réalisation </h2>
+			<p> Une fois la base de donnée crée et remplie, nous avons élaboré l'interface. Un menu déroulant permettra de séléctionner la liste a afficher.</p>
+			<p> Pour l'affichage des données, le plugin DataTables en Jquery a été séléctionné. </p>
+			<p> Concernant le changement dynamique des tableaux, tout se passe en ajax en fonction du choix dans le menu déroulant, ou des actions effectuées. <br /></p>
+			<p>Pour chaque liste, un bouton a la possibilité d'ajouter un élément. Et dans chaque ligne du tableau, deux boutons permettent de modifier ou supprimer un élément.
+			L'ajout et/ou la modification d'un élément se passe dans une popUp qui récapitule l'ensemble des informations a fournir.
+			</p>
+			<p> Une redirection vers MRBS est rajouté dans un bandeau supérieur.</p>
+	</div>
+
+</div>
+
+<div class="hint">
+    <p>Merci de votre écoute</p>
+</div>
+
+
+
+<script type="text/javascript">
+$(function() {
+
+	$("#jmpress").jmpress('demo');
+});
+</script>
+</body>
+</html>
